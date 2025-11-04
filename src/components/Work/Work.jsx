@@ -32,7 +32,7 @@ const Work = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover rounded-xl transition-transform duration-500 hover:scale-105"
+                className="w-full h-48 object-contain rounded-xl transition-transform duration-500 hover:scale-105"
               />
             </div>
             <div className="p-6">
