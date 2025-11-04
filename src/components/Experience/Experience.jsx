@@ -1,11 +1,11 @@
 import React from "react";
-import { experiences } from "../../constants";
+import { experiences } from "../../constants"; 
 
 const Experience = () => {
   return (
     <section
       id="experience"
-      className="w-full py-24 px-4 md:px-8 lg:px-16 font-sans bg-skills-gradient">
+      className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-2">
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-white">EXPERIENCE</h2>
         <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
@@ -16,56 +16,57 @@ const Experience = () => {
       </div>
 
       <div className="relative">
-        <div className="hidden sm:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-white h-full"></div>
+        <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:-translate-x-0 w-1 bg-white h-full"></div>
 
-        {experiences.map((exp, index) => (
+        {experiences.map((experience, index) => (
           <div
-            key={exp.id}
-            className={`flex flex-col sm:flex-row items-center mb-16 relative ${
+            key={experience.id}
+            className={`flex flex-col sm:flex-row items-center mb-16 ${
               index % 2 === 0 ? "sm:justify-end" : "sm:justify-start"
             }`}>
-            {/* Dot/logo */}
             <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 bg-gray-400 border-4 border-[#8245ec] w-12 h-12 sm:w-16 sm:h-16 rounded-full flex justify-center items-center z-10">
               <img
-                src={exp.img}
-                alt={exp.company}
+                src={experience.img}
+                alt={experience.company}
                 className="w-full h-full object-contain rounded-full bg-white p-1"
               />
             </div>
 
-            {/* Card */}
             <div
               className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl shadow-2xl border border-white bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${
-                index % 2 === 0 ? "sm:ml-0 sm:mr-12" : "sm:mr-0 sm:ml-12"
-              } ml-4 mr-4 transform transition-transform duration-300 hover:scale-105`}>
-              <div className="flex items-center space-x-4">
-                <div className="w-16 h-16 bg-white rounded-full overflow-hidden">
+                index % 2 === 0 ? "sm:ml-0" : "sm:mr-0"
+              } sm:ml-44 sm:mr-44 ml-8 transform transition-transform duration-300 hover:scale-105`}>
+              <div className="flex items-center space-x-6">
+                <div className="w-16 h-16 bg-white rounded-md overflow-hidden">
                   <img
-                    src={exp.img}
-                    alt={exp.company}
-                    className="w-full h-full object-contain p-1"
+                    src={experience.img}
+                    alt={experience.company}
+                    className="w-full h-full object-contain rounded-full bg-white p-1"
                   />
                 </div>
 
                 <div className="flex flex-col justify-between">
-                  <h3 className="text-xl sm:text-2xl font-semibold text-white">
-                    {exp.role}
-                  </h3>
-                  <h4 className="text-md sm:text-sm text-gray-300">
-                    {exp.company}
-                  </h4>
-                  <p className="text-sm text-gray-500 mt-1">{exp.date}</p>
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-semibold text-white">
+                      {experience.role}
+                    </h3>
+                    <h4 className="text-md sm:text-sm text-gray-300">
+                      {experience.company}
+                    </h4>
+                  </div>
+                  <p className="text-sm text-gray-500 mt-2">
+                    {experience.date}
+                  </p>
                 </div>
               </div>
 
-              <p className="mt-4 text-gray-400">{exp.desc}</p>
-
+              <p className="mt-4 text-gray-400">{experience.desc}</p>
               <div className="mt-4">
                 <h5 className="font-medium text-white">Skills:</h5>
                 <ul className="flex flex-wrap mt-2">
-                  {exp.skills.map((skill, idx) => (
+                  {experience.skills.map((skill, index) => (
                     <li
-                      key={idx}
+                      key={index}
                       className="bg-[#8245ec] text-gray-300 px-4 py-1 text-xs sm:text-sm rounded-lg mr-2 mb-2 border border-gray-400">
                       {skill}
                     </li>
