@@ -13,6 +13,7 @@ import vueLogo from './assets/vue.png';
 import githubLogo from './assets/github.png';
 import gitlabLogo from './assets/gitlab.png';
 import vscodeLogo from './assets/vs.png';
+import postmanlogo from './assets/postman.png'
 import figmaLogo from './assets/figma.png';
 
 import gsocLogo from './assets/gsoc.png';
@@ -49,7 +50,6 @@ export const SkillsInfo = [
             { name: 'C++', logo: cppLogo },
             { name: 'Python', logo: pythonLogo },
             { name: 'PHP', logo: phpLogo },
-            { name: 'JavaScript', logo: javascriptLogo },
         ],
     },
     {
@@ -58,7 +58,7 @@ export const SkillsInfo = [
             { name: 'GitHub', logo: githubLogo },
             { name: 'VS Code', logo: vscodeLogo },
             { name: 'Figma', logo: figmaLogo },
-            { name: 'Postman', logo: vscodeLogo },
+            { name: 'Postman', logo: postmanlogo },
         ],
     },
 ];
