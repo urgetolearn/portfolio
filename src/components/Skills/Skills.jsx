@@ -16,42 +16,43 @@ const Skills = () => (
       </p>
     </div>
 
-    {/* Skill Categories */}
-    <div className="flex flex-wrap gap-4 justify-center">
+    {/* Skill Categories Grid */}
+    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
       {SkillsInfo.map((category) => (
-        <div
+        <Tilt
           key={category.title}
-          className="bg-gray-900 backdrop-blur-md px-6 sm:px-10 py-8 mb-10 w-full sm:w-[48%] md:w-[30%] rounded-2xl border border-white shadow-[0_0_20px_1px_rgba(130,69,236,0.3)]">
-          <h3 className="text-2xl sm:text-3xl font-semibold text-gray-400 mb-6 text-center">
-            {category.title}
-          </h3>
+          tiltMaxAngleX={15}
+          tiltMaxAngleY={15}
+          perspective={1000}
+          scale={1.05}
+          transitionSpeed={1000}
+          gyroscope={true}
+          className="w-full">
+          <div className="h-full flex flex-col justify-between bg-gray-900 backdrop-blur-md px-6 sm:px-8 py-8 rounded-2xl border border-white shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] transition-transform duration-300 hover:scale-[1.02]">
+            {/* Title */}
+            <h3 className="text-2xl font-semibold text-gray-300 mb-6 text-center">
+              {category.title}
+            </h3>
 
-          {/* Skill Items Grid */}
-          <Tilt
-            tiltMaxAngleX={20}
-            tiltMaxAngleY={20}
-            perspective={1000}
-            scale={1.05}
-            transitionSpeed={1000}
-            gyroscope={true}>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full">
+            {/* Skills */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 justify-items-center">
               {category.skills.map((skill) => (
                 <div
                   key={skill.name}
-                  className="flex items-center justify-center space-x-2 bg-transparent border-2 border-gray-700 rounded-3xl py-2 px-2 text-center">
+                  className="flex flex-col items-center text-center space-y-1 bg-transparent border border-gray-700 rounded-xl py-3 px-2 w-full hover:border-[#8245ec] transition-all">
                   <img
                     src={skill.logo}
                     alt={`${skill.name} logo`}
-                    className="w-6 h-6 sm:w-8 sm:h-8"
+                    className="w-8 h-8 sm:w-10 sm:h-10"
                   />
-                  <span className="text-xs sm:text-sm text-gray-300">
+                  <span className="text-xs sm:text-sm text-gray-300 font-medium">
                     {skill.name}
                   </span>
                 </div>
               ))}
             </div>
-          </Tilt>
-        </div>
+          </div>
+        </Tilt>
       ))}
     </div>
   </section>
